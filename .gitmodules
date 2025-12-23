@@ -1,0 +1,6 @@
+[submodule "third_party/pcrdapi"]
+	path = third_party/pcrdapi
+	url = https://github.com/cc004/pcrdapi.git
+[submodule "third_party/LandosolRoster"]
+	path = third_party/LandosolRoster
+	url = https://github.com/Ice9Coffee/LandosolRoster.git
