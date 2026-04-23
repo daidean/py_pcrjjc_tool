@@ -8,7 +8,7 @@ def main():
 
     tool = Tool()
 
-    query_text = "怎么拆 布丁 黄骑 毛二力 老师 蚊子"
+    query_text = "怎么拆 布丁 茉莉 春龙妈 镜子 蚊子"
     logger.info(query_text)
 
     chara_list = tool.parse_def(query_text)
@@ -23,6 +23,10 @@ def main():
         for result in results:
             chara_list = [e["id"] for e in result["atk"]]
             atk_list.append(tool.parse_akt(chara_list))
+
+        if not atk_list:
+            logger.warning("未查询到解法")
+            return
 
         atk_maxlen = max([len(chara) for atk in atk_list for chara in atk])
         for atk in atk_list:
